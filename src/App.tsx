@@ -1,7 +1,12 @@
 import React from 'react'
 import step0 from './images/step_0.png'
+import words from './words.json'
 
 export function App() {
+  const secretWord = words[0]
+  console.log(secretWord)
+  // const [guessedLetters, setGuessedLetters] = useState('')
+
   return (
     <main>
       <header>
@@ -14,7 +19,7 @@ export function App() {
           </p>
         </section>
         <section className="snowman-image">
-          <img src={step0} alt="first step image of snow" />;
+          <img src={step0} alt="first step image of snow" />
         </section>
         <section className="word-display">
           <h3 className="first-letter">*</h3>
@@ -26,6 +31,7 @@ export function App() {
           <h3 className="seventh-letter">*</h3>
         </section>
         <section className="alphabet-buttons">
+          {/* <div>Your guessed letters are {guessedLetters}</div> */}
           <button>A</button>
           <button>B</button>
           <button>C</button>

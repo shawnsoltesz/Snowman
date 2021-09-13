@@ -3,7 +3,7 @@
 :root {
   font: 16px / 1 sans-serif;
   --header-font: 'Snowburst One', cursive;
-  --main-background-color: rgb(204, 233, 255);
+  --header-background-color: rgb(204, 233, 255);
   --button-color: rgb(40, 103, 151);
 }
 
@@ -14,12 +14,29 @@ html {
 body {
   margin: 0;
   min-height: 100%;
-  background-color: var(--main-background-color);
 }
 header {
   font-family: var(--header-font);
   display: flex;
   justify-content: center;
+  background-color: var(--header-background-color);
+}
+
+.buttons {
+  font-size: 2rem;
+  background: grey;
+  margin: 0;
+  padding: 0.5rem;
+}
+
+.snowman-image {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  width: 300px;
+  height: 300px;
 }
 
 .word-display {
@@ -27,7 +44,6 @@ header {
   justify-content: center;
   text-align: center;
   font-size: 35px;
-  font-display: ;
 }
 
 .alphabet-buttons {
