@@ -1,5 +1,5 @@
 import React from 'react'
-import step_0 from '..images/step_0.png'
+import step0 from './images/step_0.png'
 
 export function App() {
   return (
@@ -14,9 +14,17 @@ export function App() {
           </p>
         </section>
         <section className="snowman-image">
-          <p>Placeholder</p>
+          <img src={step0} alt="first step image of snow" />;
         </section>
-        <section className="word-display">_*_*_*_*_*_*_</section>
+        <section className="word-display">
+          <h3 className="first-letter">*</h3>
+          <h3 className="second-letter">*</h3>
+          <h3 className="third-letter">*</h3>
+          <h3 className="fourth-letter">*</h3>
+          <h3 className="fifth-letter">*</h3>
+          <h3 className="sixth-letter">*</h3>
+          <h3 className="seventh-letter">*</h3>
+        </section>
         <section className="alphabet-buttons">
           <button>A</button>
           <button>B</button>
@@ -45,7 +53,6 @@ export function App() {
           <button>Y</button>
           <button>Z</button>
         </section>
-        <p>Test</p>
       </body>
       <footer>
         <p>Built with ♥ in St. Petersburg, Florida.</p>
