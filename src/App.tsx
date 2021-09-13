@@ -1,4 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
+import words from './words.json'
+//snowman images
 import step0 from './images/step_0.png'
 import step1 from './images/step_1.png'
 import step2 from './images/step_2.png'
@@ -7,12 +9,47 @@ import step4 from './images/step_4.png'
 import step5 from './images/step_5.png'
 import step6 from './images/step_6.png'
 import step7 from './images/step_7.png'
-import words from './words.json'
+
+const alphabet = [
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'H',
+  'I',
+  'J',
+  'K',
+  'L',
+  'M',
+  'N',
+  'O',
+  'P',
+  'Q',
+  'R',
+  'S',
+  'T',
+  'U',
+  'V',
+  'W',
+  'X',
+  'Y',
+  'Z',
+]
 
 export function App() {
-  const secretWord = words[0]
-  console.log(secretWord)
-  // const [guessedLetters, setGuessedLetters] = useState('')
+  const randomWord = words[0]
+  console.log(randomWord)
+  const [guessedLetters, setGuessedLetters] = useState('')
+
+  function clickOnLetter(letter: string) {
+    // Make a new state USING the old state plus the information
+    const newValueForGuessedLetters = `${guessedLetters}${letter}`
+
+    setGuessedLetters(newValueForGuessedLetters)
+  }
 
   return (
     <main>
@@ -43,34 +80,23 @@ export function App() {
           <h3 className="seventh-letter">*</h3>
         </section>
         <section className="alphabet-buttons">
-          {/* <div>Your guessed letters are {guessedLetters}</div> */}
-          <button>A</button>
-          <button>B</button>
-          <button>C</button>
-          <button>D</button>
-          <button>E</button>
-          <button>F</button>
-          <button>G</button>
-          <button>H</button>
-          <button>I</button>
-          <button>J</button>
-          <button>K</button>
-          <button>L</button>
-          <button>M</button>
-          <button>N</button>
-          <button>O</button>
-          <button>P</button>
-          <button>Q</button>
-          <button>R</button>
-          <button>S</button>
-          <button>T</button>
-          <button>U</button>
-          <button>V</button>
-          <button>W</button>
-          <button>X</button>
-          <button>Y</button>
-          <button>Z</button>
+          <div>Your guessed letters are: {guessedLetters}</div>
+          {alphabet.map(function (letter) {
+            return (
+              <button
+                key={letter}
+                onClick={function () {
+                  clickOnLetter(letter)
+                }}
+                disabled={guessedLetters.includes(letter)}
+              >
+                {letter}
+              </button>
+            )
+          })}
         </section>
+
+        {/* <div>Your guessed letters are {guessedLetters}</div> */}
       </body>
       <footer>
         <p>Built with ♥ in St. Petersburg, Florida.</p>
