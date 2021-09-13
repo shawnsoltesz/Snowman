@@ -1,5 +1,12 @@
 import React from 'react'
 import step0 from './images/step_0.png'
+import step1 from './images/step_1.png'
+import step2 from './images/step_2.png'
+import step3 from './images/step_3.png'
+import step4 from './images/step_4.png'
+import step5 from './images/step_5.png'
+import step6 from './images/step_6.png'
+import step7 from './images/step_7.png'
 import words from './words.json'
 
 export function App() {
@@ -15,13 +22,18 @@ export function App() {
       <body>
         <section className="instructions">
           <p>
-            <strong>Instructions:</strong> lorem ipsum
+            <strong>Instructions:</strong> Select a letter to guess the random
+            word. Each correct letter builds another piece of your snowman. Have
+            fun!
           </p>
         </section>
         <section className="snowman-image">
-          <img src={step0} alt="first step image of snow" />
+          <img src={step7} alt="first step image of snow" />
         </section>
         <section className="word-display">
+          <h1>Word to Guess</h1>
+        </section>
+        <section className="letter-display">
           <h3 className="first-letter">*</h3>
           <h3 className="second-letter">*</h3>
           <h3 className="third-letter">*</h3>
