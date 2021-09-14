@@ -11,32 +11,32 @@ import words from './words.json'
 import step7 from './images/step_7.png'
 
 const alphabet = [
-  'A',
-  'B',
-  'C',
-  'D',
-  'E',
-  'F',
-  'G',
-  'H',
-  'I',
-  'J',
-  'K',
-  'L',
-  'M',
-  'N',
-  'O',
-  'P',
-  'Q',
-  'R',
-  'S',
-  'T',
-  'U',
-  'V',
-  'W',
-  'X',
-  'Y',
-  'Z',
+  'a',
+  'b',
+  'c',
+  'd',
+  'e',
+  'f',
+  'g',
+  'h',
+  'i',
+  'j',
+  'k',
+  'l',
+  'm',
+  'n',
+  'o',
+  'p',
+  'q',
+  'r',
+  's',
+  't',
+  'u',
+  'v',
+  'w',
+  'x',
+  'y',
+  'z',
 ]
 
 export function App() {
@@ -49,22 +49,20 @@ export function App() {
   console.log(alphabetizeRandomWord)
 
   //Compares user's letter guess against random word's array of letters
-  function matchRandomWord(letter: string) {
-    const result = alphabetizeRandomWord.includes(letter)
 
-    return result
-  }
-
-  const shawn = matchRandomWord
-  console.log(shawn)
-
+  //Guessed Letters state
   const [guessedLetters, setGuessedLetters] = useState([''])
 
   function clickOnLetter(letter: string) {
     const newValueForGuessedLetters = [...guessedLetters, letter]
     setGuessedLetters(newValueForGuessedLetters)
+
+    const matchAlphabetizeRandomWord = alphabetizeRandomWord.includes(letter)
+    console.log(letter)
+    console.log(matchAlphabetizeRandomWord)
   }
 
+  console.log(clickOnLetter)
   return (
     <body>
       <header>
