@@ -24,14 +24,16 @@ resets snowman image
 clears guessed letters
 resets keyboard
 
-Algorithim for obtaining a random word and apply letter guess
+Algorithm for obtaining a random word and apply letter guess
 
 //Obtain the word as a string - const alphabetizeRandomWord takes getRandomWord to capture random word
 
 //parse word into new array of individual letters
 
-determine the index of the letters
+determine the index of the letters - this may not be needed. double check!
 
-compare guessed letter to the array
+compare guessed letter to the array - map through the array of strings
 
-if match, use index to pair it with the display
+if match, use index to pair it with the display?
+
+display appropriate letter

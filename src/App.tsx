@@ -41,14 +41,19 @@ const alphabet = [
 
 export function App() {
   //Randomized Word
-  const getRandomWord = words[Math.floor(Math.random() * 1034)]
+  const getRandomWord = words[Math.floor(Math.random() * 1024)]
   console.log(getRandomWord)
 
   //Split Random Word into array of letters
   const alphabetizeRandomWord = getRandomWord.split('')
   console.log(alphabetizeRandomWord)
 
-  //Compares user's letter guess against random word's array of letters
+  //Get the index of the letter to determine its positioning within the word
+
+  const indexAlphabetizeRandomWord = alphabetizeRandomWord.forEach(
+    (alphabetizeRandomWord) => console.log(alphabetizeRandomWord)
+  )
+  console.log(indexAlphabetizeRandomWord)
 
   //Guessed Letters state
   const [guessedLetters, setGuessedLetters] = useState([''])
@@ -57,10 +62,14 @@ export function App() {
     const newValueForGuessedLetters = [...guessedLetters, letter]
     setGuessedLetters(newValueForGuessedLetters)
 
+    //Compares user's letter guess against random word's array of letters
+
     const matchAlphabetizeRandomWord = alphabetizeRandomWord.includes(letter)
     console.log(letter)
     console.log(matchAlphabetizeRandomWord)
   }
+  // Next if true, display letter and image OR False and do nothing unless 26th word
+  // Add reset button
 
   console.log(clickOnLetter)
   return (
@@ -83,25 +92,25 @@ export function App() {
         <h1>Word to Guess</h1>
       </section>
       <section className="random-word-display">
-        <h3 className="0">
+        <h3 className="0index">
           <u>*</u>
         </h3>
-        <h3 className="1">
+        <h3 className="1index">
           <u>*</u>
         </h3>
-        <h3 className="2">
+        <h3 className="2index">
           <u>*</u>
         </h3>
-        <h3 className="3">
+        <h3 className="3index">
           <u>*</u>
         </h3>
-        <h3 className="4">
+        <h3 className="4index">
           <u>*</u>
         </h3>
-        <h3 className="5">
+        <h3 className="5index">
           <u>*</u>
         </h3>
-        <h3 className="6">
+        <h3 className="6index">
           <u>*</u>
         </h3>
       </section>
